@@ -1,0 +1,26 @@
+import cv2
+from ultralytics import YOLO
+
+class VideoCamera:
+    def __init__(self):
+        self.model = YOLO("models/best.pt")
+        
+        # iPad stream URL (DroidCam or RTSP)
+        self.stream_url = "http://10.10.11.161:4747/video"  
+        
+        #self.video = cv2.VideoCapture(self.stream_url)
+        self.video = cv2.VideoCapture("test.mp4")
+
+    def get_frame(self):
+        success, frame = self.video.read()
+        if not success:
+            return None
+
+        results = self.model(frame)
+        annotated = results[0].plot()
+
+        ret, jpeg = cv2.imencode('.jpg', annotated)
+        return jpeg.tobytes()
+
+    def stop(self):
+        self.video.release()

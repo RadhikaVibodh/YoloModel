@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pump Fault Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Pump Fault Detection - YOLO</h1>
+
+    <div class="controls">
+        <button onclick="location.href='/start'">Start</button>
+        <button onclick="location.href='/stop'">Stop</button>
+    </div>
+
+    <div class="video-container">
+        <img id="video" src="{{ url_for('video_feed') }}">
+    </div>
+</body>
+</html>

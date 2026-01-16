@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.controls button {
+    margin: 10px;
+    padding: 12px 22px;
+    font-size: 18px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+.video-container img {
+    width: 70%;
+    border-radius: 10px;
+    margin-top: 25px;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.3);
+}
